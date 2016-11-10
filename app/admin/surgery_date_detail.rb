@@ -1,5 +1,7 @@
 ActiveAdmin.register SurgeryDateDetail do
 
+ permit_params :user, :date_of_surgery, :surgeon, :primary_physician, :location, :type_of_surgery
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
