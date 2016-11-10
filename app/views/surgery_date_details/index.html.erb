@@ -20,7 +20,7 @@
 
       <% @surgery_date_details.each do |surgery_date_detail| %>
       <tr>
-        <td><%= surgery_date_detail.user %></td>
+        <td><%= surgery_date_detail.user.email %></td>
         <td><%= surgery_date_detail.date_of_surgery %></td>
         <td><%= surgery_date_detail.surgeon %></td>
         <td><%= surgery_date_detail.primary_physician %></td>
