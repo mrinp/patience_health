@@ -10,7 +10,7 @@ class SurgeryDateDetailsController < ApplicationController
   end
 
   def index
-    @surgery_date_details = SurgeryDateDetail.all
+    @surgery_date_details = current_user.surgery_date_detail.page(params[:page])
 
     render("surgery_date_details/index.html.erb")
   end
