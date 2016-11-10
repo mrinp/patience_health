@@ -20,7 +20,13 @@
 
       <% @surgery_date_details.each do |surgery_date_detail| %>
       <tr>
-        <td><%= surgery_date_detail.user.email %></td>
+        <td>
+          <% if surgery_date_detail.user.present? %>
+            <a href="/users/<%= surgery_date_detail.user.id %>">
+              <%= surgery_date_detail.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= surgery_date_detail.date_of_surgery %></td>
         <td><%= surgery_date_detail.surgeon %></td>
         <td><%= surgery_date_detail.primary_physician %></td>
