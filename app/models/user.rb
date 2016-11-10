@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_one    :surgery_date_detail,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
