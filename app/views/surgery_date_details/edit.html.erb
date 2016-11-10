@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @surgery_date_detail.errors.any? %>
+  <% @surgery_date_detail.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Surgery Date Detail #<%= @surgery_date_detail.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_surgery_date_detail/<%= @surgery_date_detail.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user -->
+      <div class="form-group">
+        <label for="user" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user" name="user" placeholder="User" class="form-control" value="<%= @surgery_date_detail.user %>">
+      </div>
+
+      <!-- Label and input for date_of_surgery -->
+      <div class="form-group">
+        <label for="date_of_surgery" class="control-label">
+          Date of surgery
+        </label>
+
+        <input type="text" id="date_of_surgery" name="date_of_surgery" placeholder="Date of surgery" class="form-control" value="<%= @surgery_date_detail.date_of_surgery %>">
+      </div>
+
+      <!-- Label and input for surgeon -->
+      <div class="form-group">
+        <label for="surgeon" class="control-label">
+          Surgeon
+        </label>
+
+        <input type="text" id="surgeon" name="surgeon" placeholder="Surgeon" class="form-control" value="<%= @surgery_date_detail.surgeon %>">
+      </div>
+
+      <!-- Label and input for primary_physician -->
+      <div class="form-group">
+        <label for="primary_physician" class="control-label">
+          Primary physician
+        </label>
+
+        <input type="text" id="primary_physician" name="primary_physician" placeholder="Primary physician" class="form-control" value="<%= @surgery_date_detail.primary_physician %>">
+      </div>
+
+      <!-- Label and input for location -->
+      <div class="form-group">
+        <label for="location" class="control-label">
+          Location
+        </label>
+
+        <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @surgery_date_detail.location %>">
+      </div>
+
+      <!-- Label and input for type_of_surgery -->
+      <div class="form-group">
+        <label for="type_of_surgery" class="control-label">
+          Type of surgery
+        </label>
+
+        <input type="text" id="type_of_surgery" name="type_of_surgery" placeholder="Type of surgery" class="form-control" value="<%= @surgery_date_detail.type_of_surgery %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Surgery Date Detail
+      </button>
+      or
+      <a href="/surgery_date_details/<%= @surgery_date_detail.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>
+    Surgery date details
+    <a href="/surgery_date_details/new" class="btn btn-lg btn-success">New Surgery date detail</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>User</th>
+        <th>Date of surgery</th>
+        <th>Surgeon</th>
+        <th>Primary physician</th>
+        <th>Location</th>
+        <th>Type of surgery</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @surgery_date_details.each do |surgery_date_detail| %>
+      <tr>
+        <td><%= surgery_date_detail.user %></td>
+        <td><%= surgery_date_detail.date_of_surgery %></td>
+        <td><%= surgery_date_detail.surgeon %></td>
+        <td><%= surgery_date_detail.primary_physician %></td>
+        <td><%= surgery_date_detail.location %></td>
+        <td><%= surgery_date_detail.type_of_surgery %></td>
+        <td>
+          <a href="/surgery_date_details/<%= surgery_date_detail.id %>" class="btn btn-primary">Show</a>
+          <a href="/surgery_date_details/<%= surgery_date_detail.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_surgery_date_detail/<%= surgery_date_detail.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
