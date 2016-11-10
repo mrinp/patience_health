@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Health_detail resource:
+  # CREATE
+  get "/health_details/new", :controller => "health_details", :action => "new"
+  post "/create_health_detail", :controller => "health_details", :action => "create"
+
+  # READ
+  get "/health_details", :controller => "health_details", :action => "index"
+  get "/health_details/:id", :controller => "health_details", :action => "show"
+
+  # UPDATE
+  get "/health_details/:id/edit", :controller => "health_details", :action => "edit"
+  post "/update_health_detail/:id", :controller => "health_details", :action => "update"
+
+  # DELETE
+  get "/delete_health_detail/:id", :controller => "health_details", :action => "destroy"
+  #------------------------------
+
   # Routes for the Surgery_date_detail resource:
   # CREATE
   get "/surgery_date_details/new", :controller => "surgery_date_details", :action => "new"
