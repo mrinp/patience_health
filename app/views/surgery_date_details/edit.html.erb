@@ -24,7 +24,7 @@
           User
         </label>
 
-        <input type="text" id="user" name="user" placeholder="User" class="form-control" value="<%= @surgery_date_detail.user %>">
+        <%= select_tag(:user, options_from_collection_for_select(User.all, :id, :email, @surgery_date_detail.user), :class => "form-control") %>
       </div>
 
       <!-- Label and input for date_of_surgery -->
