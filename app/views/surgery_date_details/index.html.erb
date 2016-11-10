@@ -28,8 +28,11 @@
         <td><%= surgery_date_detail.type_of_surgery %></td>
         <td>
           <a href="/surgery_date_details/<%= surgery_date_detail.id %>" class="btn btn-primary">Show</a>
-          <a href="/surgery_date_details/<%= surgery_date_detail.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_surgery_date_detail/<%= surgery_date_detail.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == surgery_date_detail.user %>
+            <a href="/surgery_date_details/<%= surgery_date_detail.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_surgery_date_detail/<%= surgery_date_detail.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
