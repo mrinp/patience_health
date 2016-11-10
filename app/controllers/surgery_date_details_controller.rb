@@ -1,5 +1,5 @@
 class SurgeryDateDetailsController < ApplicationController
-  before_action :current_user_must_be_surgery_date_detail_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_surgery_date_detail_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_surgery_date_detail_user
     surgery_date_detail = SurgeryDateDetail.find(params[:id])
